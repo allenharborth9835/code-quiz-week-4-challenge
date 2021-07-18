@@ -8,7 +8,9 @@
 header{
     top: 0;
 }
-header .timer{
+.timer{
+    font-size: 25px;
+    font-weight: bold;
     margin: 0;
     padding: 0;
     float: right;
@@ -27,12 +29,13 @@ header .timer{
     margin-top:20px;
 }
 #response{
-    padding-top: 10px;
+    padding-top: 30px;
     font-size: 35px;
-    color: var(--responseText);
+    color: var(--responseText);   
     max-width: 500px;
     margin: auto;
 }
+
 button{
     background-color: var(--primary);
     color: var(--buttonText);

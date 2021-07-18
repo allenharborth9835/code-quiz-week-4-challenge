@@ -64,7 +64,7 @@ function startGame(){
     highscoreEl.remove();
     document.body.appendChild(mainDivEl);
     document.body.appendChild(responseEl);
-
+    responseEl.innerHTML = "";
     function displayNext(){   
         if((i<questions.length)&&(!questions[i].isAnswered)){
             questionEl.innerHTML = questions[i].question;

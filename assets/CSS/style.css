@@ -1,0 +1,49 @@
+:root{
+    --primary: rgb(35, 97, 148);
+    --hover: rgb(70, 136, 190);
+    --secondary: rgb(133, 19, 19);
+    --buttonText: rgb(255, 255, 255);
+    --responseText: rgb(102, 102, 102);
+}
+header{
+    top: 0;
+}
+header .timer{
+    margin: 0;
+    padding: 0;
+    float: right;
+    
+}
+.center{
+    padding-top: 200px;
+    max-width: 500px;
+    margin: auto;
+}
+#game{
+    display: flex;
+    flex-direction: column;
+}
+#game > *{
+    margin-top:20px;
+}
+#response{
+    padding-top: 10px;
+    font-size: 35px;
+    color: var(--responseText);
+    max-width: 500px;
+    margin: auto;
+}
+button{
+    background-color: var(--primary);
+    color: var(--buttonText);
+    font-size: 25px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;    
+}
+button:hover{
+    background-color: var(--hover);
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}

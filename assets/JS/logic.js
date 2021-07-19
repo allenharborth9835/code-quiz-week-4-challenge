@@ -131,23 +131,8 @@ function submitHighscore(event){
     scoreInfo.push(score);
     console.log(scoreInfo);
     console.log(scoreArr);
-    //if(scoreArr.length >= 1){
-    //    let n = scoreArr.length
-    //    for(var i = 0; i < n; i++){
-    //        isInputed = false;
-    //        if((scoreInfo[1] >= scoreArr[i][1])&&!isInputed){
-    //            console.log(scoreArr[i][1])
-    //            console.log(scoreInfo[1])
-    //            scoreArr.splice(i,0,scoreInfo);
-    //            isInputed = true;
-    //        }else if(!isInputed){
-    //            scoreArr.push(scoreInfo);
-    //            isInputed = true;
-    //        }
-    //    }
-    //}else{
-        scoreArr.push(scoreInfo);
-    //}
+    scoreArr.push(scoreInfo);
+
     localStorage.setItem("highscore",JSON.stringify(scoreArr));
     
     highscoreReview();

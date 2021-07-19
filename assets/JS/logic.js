@@ -12,9 +12,8 @@ let time = 45;
 
 //create a function to create the start page
 function startPage(){
-    highscoreInputEl.remove();
-    highscoreEl.remove();
-    highscoreEl.remove();
+    clearScreen()
+    document.body.appendChild(startEl)
     var localHighscores = localStorage.getItem("highscore");
     if(!(localHighscores===null)){
         localHighscores = JSON.parse(localHighscores);
@@ -60,8 +59,7 @@ function startGame(){
         isAnswered: false
         }
     ]
-    startEl.remove();
-    highscoreEl.remove();
+    clearScreen();
     document.body.appendChild(mainDivEl);
     document.body.appendChild(responseEl);
     responseEl.innerHTML = "";
@@ -110,39 +108,57 @@ function startGame(){
         }
     }, 1000);
 }
+//fuction to clear the screen of objects
+function clearScreen(){
+    responseEl.remove()
+    startEl.remove();
+    highscoreInputEl.remove();
+    mainDivEl.remove();
+    highscoreEl.remove();
+}
 //create a highscore input page
 function highscoreInput(){
-    responseEl.remove();
-    mainDivEl.remove();
+    clearScreen();
     document.body.appendChild(highscoreInputEl)
     document.body.appendChild(responseEl)
-
     let scoreEl = document.getElementById('score');
     let submitEl = document.querySelector('#submitBtn')
     scoreEl.innerHTML = score;
     
     submitEl.onclick = submitHighscore;
 }
+//sort function to sort scores
+function sortArr(array){
+    scoreArr.sort(sortFunction);
+    function sortFunction(a, b){
+        if(a[1]===b[1]){
+            return 0;
+        }else{
+            return (b[1] < a[1]) ? -1 : 1;
+        }
+    }
+    return array;
+}
+//function for when the submit highscore buyyon was pressed
 function submitHighscore(event){
     event.preventDefault();
     var NameInput = document.querySelector("input[id='name']").value;
     let scoreInfo = [];
-    scoreInfo.push(NameInput);
-    scoreInfo.push(score);
-    console.log(scoreInfo);
-    console.log(scoreArr);
-    scoreArr.push(scoreInfo);
-
-    localStorage.setItem("highscore",JSON.stringify(scoreArr));
-    
-    highscoreReview();
+    if(!NameInput){
+        window.alert("you must input your name");
+        highscoreInput();
+    }else{
+        scoreInfo.push(NameInput);
+        scoreInfo.push(score);
+        scoreArr.push(scoreInfo);
+        sortArr(scoreArr);
+        localStorage.setItem("highscore",JSON.stringify(scoreArr));
+        highscoreReview();
+    }
 }
 //create a highscore page
 function highscoreReview(){
-    responseEl.remove()
-    startEl.remove();
-    highscoreInputEl.remove();
-    mainDivEl.remove();
+    clearScreen();
     document.body.appendChild(highscoreEl);
     let scoresEl = document.querySelector("#scores")
     scoresEl.innerHTML = "";
@@ -161,8 +177,5 @@ function highscoreReview(){
         scoresEl.innerHTML = "";
     };
 }
-//create function to store data
-//create funtion to load data
-//create a function to clear data
-startPage();
 
+startPage();

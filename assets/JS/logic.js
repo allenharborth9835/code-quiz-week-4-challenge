@@ -129,19 +129,31 @@ function submitHighscore(event){
     let scoreInfo = [];
     scoreInfo.push(NameInput);
     scoreInfo.push(score);
-    console.log(scoreInfo)
-    scoreArr.push(scoreInfo);
+    console.log(scoreInfo);
+    console.log(scoreArr);
+    //if(scoreArr.length >= 1){
+    //    let n = scoreArr.length
+    //    for(var i = 0; i < n; i++){
+    //        isInputed = false;
+    //        if((scoreInfo[1] >= scoreArr[i][1])&&!isInputed){
+    //            console.log(scoreArr[i][1])
+    //            console.log(scoreInfo[1])
+    //            scoreArr.splice(i,0,scoreInfo);
+    //            isInputed = true;
+    //        }else if(!isInputed){
+    //            scoreArr.push(scoreInfo);
+    //            isInputed = true;
+    //        }
+    //    }
+    //}else{
+        scoreArr.push(scoreInfo);
+    //}
     localStorage.setItem("highscore",JSON.stringify(scoreArr));
     
     highscoreReview();
 }
-
 //create a highscore page
 function highscoreReview(){
-    
-    if(scoreArr >  2){
-        
-    }
     responseEl.remove()
     startEl.remove();
     highscoreInputEl.remove();
@@ -149,7 +161,6 @@ function highscoreReview(){
     document.body.appendChild(highscoreEl);
     let scoresEl = document.querySelector("#scores")
     scoresEl.innerHTML = "";
-    console.log(scoreArr);
     scoreArr.forEach( score =>{
         let postition = scoreArr.indexOf(score);
         let number = `${postition + 1}. ${score[0]} ${score[1]}<br>`;

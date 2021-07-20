@@ -1,12 +1,17 @@
 :root{
     --primary: rgb(35, 97, 148);
     --hover: rgb(70, 136, 190);
-    --secondary: rgb(133, 19, 19);
     --buttonText: rgb(255, 255, 255);
     --responseText: rgb(102, 102, 102);
 }
 header{
     top: 0;
+}
+header a{
+    color: var(--hover);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
 }
 .timer{
     font-size: 25px;
@@ -34,6 +39,18 @@ header{
     color: var(--responseText);   
     max-width: 500px;
     margin: auto;
+    -webkit-animation: cssAnimation 3s forwards; 
+    animation: cssAnimation 2s forwards;
+}
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
 }
 
 button{

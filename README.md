@@ -6,7 +6,7 @@ For this challenge I had to create a javascript quiz. For this project I created
 This challenge was fairly challenging. It gave me knowledge of what the DOM was and how to use it to apply html to a webpage. The challenge reinforced the use of arrays and how to use loops with arrays to create functions with less code, a feature I wish I would have used in the last challenge. I also struggled with how to go through the questions one at a time and was given help about how to look at this question and that's when I figured out that I needed to give each question their own boolean called isAwsered to see if it was asked and answered. It has the same logic as a loop but won't just go through automatically to the last one. Another action I struggled through was how to sort the highscores that are stored. I had found the short technique online which helped a lot with this program which I would store to my local storage afterward. 
 
 ## Screenshots
-![App Screenshot](./assets/images)
+![App Screenshot](./assets/images/javascript-quiz.JPG)
 
 ## Documentation
 

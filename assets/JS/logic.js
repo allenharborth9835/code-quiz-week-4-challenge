@@ -4,10 +4,11 @@ let highscoreEl = document.querySelector('#highscore');
 let highscoreInputEl = document.querySelector('#highscoreInput');
 let responseEl = document.querySelector("#response");
 let timeEl = document.getElementById('time');
+let time = 45;
 let isGameOn = false;
 let scoreArr = [];
 let score = 0;
-let time = 45;
+
 
 //function for the checkHighscore
 //it also ends game to let player submit highscore
